@@ -6,7 +6,8 @@
   ],
 
   "users": [
-    {  "userName": "admin" , "passWord" : "admin","roleid": 1}
+    {  "userName": "admin" , "passWord" : "admin","roleid": 3},
+    {  "userName": "jay" , "passWord" : "jay123","roleid": 1}
 
   ]
 }

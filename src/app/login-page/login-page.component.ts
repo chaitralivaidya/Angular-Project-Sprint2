@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
   invalidLogin: boolean = false;
+  users: User[];
   user: User;
 
   constructor(
@@ -27,21 +28,20 @@ export class LoginPageComponent implements OnInit {
       return;
     }
     if (this.loginForm.valid) {
-      this.loginService.getUserForLogin(
-        this.loginForm.controls.userName.value,
-      ).subscribe(
-        response => {this.user = response})
-
-      console.log(this.user + "in login.ts")
-      if (this.user != undefined && this.user != null) {
-        localStorage.setItem(
-          'username',
-          this.loginForm.controls.userName.value
-        );
-        this.router.navigate(['/HomePage']);
+      console.log(this.users);
+      for (let user of this.users) {
+        if (
+          user.userName === this.loginForm.controls.userName.value &&
+          user.passWord === this.loginForm.controls.password.value
+        ) {
+          localStorage.setItem(
+            'userName',
+            this.loginForm.controls.userName.value
+          );
+          console.log(user);
+          this.router.navigate(['/HomePage']);
+        }
       }
-    } else {
-      this.invalidLogin = true;
     }
   }
 
@@ -49,7 +49,10 @@ export class LoginPageComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       userName: ['', Validators.required],
       password: ['', Validators.required],
-      userRole : ['', Validators.required]
+      userRole: ['', Validators.required],
+    });
+    this.loginService.getUsers().subscribe((response) => {
+      this.users = response;
     });
   }
 }
