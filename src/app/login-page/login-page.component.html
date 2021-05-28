@@ -1,66 +1,41 @@
-<!-- <body class="img js-fullheight" style="background-image: url(../assets/images/bg.jpg);">
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-		      	<form action="#" class="signin-form">
-		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Username" required>
-		      		</div>
-	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-	            </div>
-	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
-	            </div>
-	    
-	          </form>	          
-	          	
-	          	
-	          </div>
-		      </div>
-				</div>
-			</div>
-
-	</section>
-
-
-	</body> -->
-	<body>
-		<div class="container-login100" style="background-image: url('../assets/images/insurance-page-header.jpg');">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-37">
-						Sign In
-					</span>
-	
-					<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-						<input class="input100" type="text" name="username" placeholder="username or email">
-						<span class="focus-input100"></span>
-					</div>
-	
-					<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-						<input class="input100" type="password" name="pass" placeholder="password">
-						<span class="focus-input100"></span>
-					</div>
-	
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Sign In
-						</button>
-					</div>
-	
-					
-				</form>
-	
-				
-			</div>
-		</div>
-	</body>
+<body >
+  <div class="abc">
+<h1 style="text-align: center;">Login Page work</h1>
+<br/><br/>											
+  <div class="col-md-6 col-md-offset-2">											
+    <h3 style="text-align: center">Login</h3>											
+    <br/>											
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">											
+      <div class="form-group">											
+        <label for="userName">User Name</label>											
+        <input type="text" class="form-control" formControlName="userName" id="userName">											
+        <div *ngIf="submitted && loginForm.controls.userName.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.userName.errors.required">Email is required</div>											
+        </div>											
+        											
+      </div>											
+      <div class="form-group">											
+        <label for="pwd">Password:</label>											
+        <input type="password" class="form-control" formControlName="password" id="pwd">											
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required</div>											
+        </div>											
+      </div>	
+      
+      <div class="form-group">											
+        <label for="userRole">Role Code</label>											
+        <input type="number" class="form-control" formControlName="userRole" id="userRole">											
+        <div *ngIf="submitted && loginForm.controls.userRole.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.userRole.errors.required">Role Code is required</div>											
+        </div>											
+      </div>	
+      <button class="btn btn-success">Login</button> &nbsp; &nbsp;											
+      <button class="btn btn-danger" type="reset">Cancel</button>											
+      <br/><br/>											
+      <div *ngIf="invalidLogin" class="error">											
+        <div class="text-danger">Invalid credentials.</div>											
+      </div>											
+    </form>											
+  </div>
+</div>
+</body>
