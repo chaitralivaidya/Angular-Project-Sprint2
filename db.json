@@ -1,0 +1,13 @@
+{
+  "userRoles" :[
+    {"roleName" : "Insured", "roleCode" : 1},
+    {"roleName" : "Claim Handler", "roleCode" : 2},
+    {"roleName" : "Claim Adjuster", "roleCode" : 3}
+  ],
+
+  "users":[
+    {"userName" : "admin", "passWord" : "admin", "userRole" : 3},
+    {"userName" : "jay", "passWord" : "jay123", "userRole" : 1},
+    {"userName" : "vijay", "passWord" : "vijay123", "userRole" : 2}
+  ]
+}

@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Project-Sprint2';
+  myBackgroundImage = "./assets/images/users.png";
 }
