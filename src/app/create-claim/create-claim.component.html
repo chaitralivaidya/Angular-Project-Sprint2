@@ -1,0 +1,83 @@
+<body>
+	<div class="container" style="margin-top: 90px">
+		<div class="row">
+			<div class="col-lg-4 col-lg-5 col-md-5 offset-sm-3 center">
+				<div class="card">
+					<h3 class="card-header alert alert-success" style="color: maroon;">
+						
+					CREATE CLAIM	
+					</h3>
+					<div class="card-body">
+						<form [formGroup]="claimForm" (ngSubmit)="onSubmit()">
+							<div class="form-group">
+								<input formControlName="claimReason" type="text" class="form-control" id="claimReason"
+									placeholder="Claim Reason" name="claimReason"
+									required="required"> <span id="claimReason"
+									style="color: red;"></span>
+							</div><br>
+							<div class="form-group">
+								Select Claim Types
+								<select class="form-control"  id="claimTypeId" formControlName="claimTypeId" 
+								placeholder="---------------" required >
+									<option value=1>Road Accident</option>
+									<option value=2>Property Damage</option>
+									<option value=3>Fire</option>
+								</select>
+								
+							</div>
+
+
+							<br>
+                            <div class="form-group">
+								<input formControlName="accLocStreet" type="text" class="form-control" id="accLocStreet"
+									placeholder="Accident Location Street" name="accLocStreet"
+									required="required"> <span id="accLocStreet"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="accCity" type="text" class="form-control" id="accCity"
+									placeholder="Accident City" name="accCity"
+									required="required"> <span id="accCity"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="accState" type="text" class="form-control" id="accState"
+									placeholder="Accident State" name="accState"
+									required="required"> <span id="accState"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="accZip" type="text" class="form-control" id="accZip"
+									placeholder="Accident Zip" name="accZip"
+									required="required" type="number"> <span id="accZip"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="claimNumber" type="text" class="form-control" id="claimNumber"
+									placeholder="Claim Number" name="claimNumber"
+									required="required" type="number"> <span id="claimNumber"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="id"  type="number" class="form-control" id="id"
+									placeholder="Policy Number" name="id"
+									required="required" [(ngModel)]="storedPolicyNumber" type="number"> <span id="id"
+									style="color: red;"></span>
+							</div><br>
+							<div class="container">
+								<div class="center" >
+									<input type="submit" value="Submit" class="btn btn-success">
+								</div>
+							  </div><br>
+							<!-- <input type="submit" value="Submit" class="btn btn-success"> -->
+								
+						</form>
+						<h4 style="color: green;"></h4>
+						<h4 style="color: red;"></h4>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

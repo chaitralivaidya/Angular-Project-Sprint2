@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Claim Creation</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container" style="margin-top: 50px">
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>ClaimNumber</th>
+					<th>CalimReason</th>
+					<th>AccidentLocation</th>
+					<th>ClaimType</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+						<td>ClaimNumber</td>
+						<td>CalimReason</td>
+						<td>AccidentLocation</td>
+						<td>ClaimType</td>
+						<td><a class="btn btn-success" target="claim_a"
+							href="claimCreate.jsp?policyNum=${p.policy_number}">Generate Report</a></td>
+					</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	<div class="container">
+		<iframe src="" height="550px" width="100%" style="border: none;"
+			name="claim_a"></iframe>
+		<iframe src="" height="550px" width="100%" style="border: none;"
+			name="claim_next"></iframe>
+	</div>
+</body>
+</html>

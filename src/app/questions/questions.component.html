@@ -1,0 +1,80 @@
+<p>questions works!</p>
+
+<!-- <body>
+  <div class="container" style="margin-top: 90px">
+    <div class="row">
+      <div class="col-lg-4 col-lg-5 col-md-5 offset-sm-3 center">
+        <div class="card">
+          <h3 class="card-header alert alert-success" style="color: maroon">
+            CREATE USER
+          </h3>
+          <div class="card-body">
+            <form [formGroup]="questionAnswerForm" >
+              <div class="form-group">
+                <label for="question" >Question</label>
+                <table>
+                  <tr *ngFor="let question of questions" >
+                    <td>{{ question.question }}</td>
+                    <td>
+                      <div class="form-group">
+                        Select Answer
+                        <select
+                          #answers
+                          class="form-control"
+                          id="answer"
+                          formControlName="answer"
+                          required
+                        >
+                          <option class="hidden" disabled>Select Answer</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                    </td>
+                    <td>
+                      <button 
+                        class="btn btn-danger"
+                        (click)="saveClaimdetails(question.question, answers.value)"
+                      >
+                        Save
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <br />
+              <div class="container">
+                <div class="center">
+                  <input type="submit" value="Submit" class="btn btn-success" disabled=true/>
+                </div>
+              </div>
+            </form>
+            <h4 style="color: green"></h4>
+            <h4 style="color: red"></h4>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body> -->
+<form [formGroup]="questionAnswerForm" (ngSubmit)="onSubmit()">
+  <br><label style="font-size:20pt;" >select vehicle type</label><br>
+  <!-- <input type="text" formControlName="question1" name="question1" >Select vehicle type -->
+  <input type="radio" formControlName="answer1" name="answer1" value="1">truck
+  <input type="radio" formControlName="answer1" name="answer1" value="2">cycle
+  <!-- <input type="radio" formControlName="food" name="food"> -->
+  <br>
+  <br><label style="font-size:20pt;" >select age</label><br>
+  <input type="radio" formControlName="answer2" name="answer2" value="1">less than 5
+  <input type="radio" formControlName="answer2" name="answer2" value="2">5-10
+  <br>
+  <br><label style="font-size:20pt;" >select vehicle color</label><br>
+  <input type="radio" formControlName="answer3" name="answer3" value="1">blue
+  <input type="radio" formControlName="answer3" name="answer3"value="2">red
+  <br>
+  <input type="submit" value="Submit" />
+</form>
+
+

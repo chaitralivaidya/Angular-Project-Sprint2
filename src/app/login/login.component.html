@@ -1,0 +1,43 @@
+<body >
+  <div class="container" style="margin-top: 90px">
+  <div class="abc">
+<h1 style="text-align: center;">Login Page work</h1>
+<br/><br/>											
+  <div class="col-md-6 col-md-offset-2">											
+    <h3 style="text-align: center">Login</h3>											
+    <br/>											
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">											
+      <div class="form-group">											
+        <label for="userName">User Name</label>											
+        <input type="text" class="form-control" formControlName="userName" id="userName" placeholder="Username">											
+        <div *ngIf="submitted && loginForm.controls.userName.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.userName.errors.required">Email is required</div>											
+        </div>											
+        											
+      </div>											
+      <div class="form-group">											
+        <label for="pwd">Password:</label>											
+        <input type="password" class="form-control" formControlName="password" id="pwd" placeholder="Password">											
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">Password is required</div>											
+        </div>											
+      </div>	
+      
+      <!-- <div class="form-group">											
+        <label for="userRole">Role Code</label>											
+        <input [disabled]="true" type="number" class="form-control" formControlName="userRole" id="userRole" >											
+        <div *ngIf="submitted && loginForm.controls.userRole.errors" class="error">											
+          <div class="text-danger" *ngIf="loginForm.controls.userRole.errors.required">Role Code is required</div>											
+        </div>											
+      </div>	 -->
+      <button class="btn btn-success">Login</button> &nbsp; &nbsp;											
+      <button class="btn btn-danger" type="reset">Cancel</button>											
+      <br/><br/>											
+      <div *ngIf="invalidLogin" class="error">											
+        <div class="text-danger">Invalid credentials.</div>											
+      </div>											
+    </form>											
+  </div>
+</div>
+</div>
+</body>

@@ -1,0 +1,59 @@
+<body>
+	<div class="container" style="margin-top: 90px">
+		<div class="row">
+			<div class="col-lg-4 col-lg-5 col-md-5 offset-sm-3 center">
+				<div class="card">
+					<h3 class="card-header alert alert-success" style="color: maroon;">CREATE
+						POLICY</h3>
+					<div class="card-body">
+						<form  [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+							<div class="form-group">
+								<input formControlName="policyNumber" type="text" class="form-control" id="policyNumber"
+									placeholder="Policy Number" name="policyNumber"
+									required="required"> <span id="policyNumber"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="policyPremium" type="number" class="form-control" id="policyPremium"
+									placeholder="Policy Premium" name="policyPremium"
+									required="required"> <span id="policyPremium"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="accountNumber" type="number" 
+								class="form-control" id="accountNumber"
+									placeholder="Account Number" name="accountNumber"
+									required="required"> <span id="accountNumber"
+									style="color: red;"></span>
+							</div><br>
+                            <div class="form-group">
+								<input formControlName="id"type="text" 
+								class="form-control" id="id"
+									placeholder="Policy holders name" name="id"
+									required="required"> <span id="id"
+									style="color: red;"></span>
+							</div><br>
+
+							<div class="form-group">
+								<input formControlName="createdBy" type="text" 
+								class="form-control" id="createdBy"
+									placeholder="Created By Name" name="createdBy"
+									required="required"> <span id="createdBy"
+									style="color: red;"></span>
+							</div><br>
+
+							<div class="container">
+								<div class="center" >
+									<input type="submit" value="Submit" class="btn btn-success">
+								</div>
+							  </div>								
+						</form>
+						<h4 style="color: green;"></h4>
+						<h4 style="color: red;"></h4>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

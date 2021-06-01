@@ -1,0 +1,127 @@
+{
+  "userroles": [
+    {
+      "roleName": "ClaimAdjuster",
+      "roleCode": 1
+    },
+    {
+      "roleName": "Insured",
+      "roleCode": 2
+    },
+    {
+      "roleName": "ClaimHandler",
+      "roleCode": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "admin",
+      "passWord": "admin",
+      "userRole": 3
+    },
+    {
+      "id": "jay",
+      "password": "jay123",
+      "userRole": "1"
+    },
+    {
+      "id": "vijay",
+      "password": "vijay123",
+      "userRole": "2"
+    },
+    {
+      "id": "sanjay",
+      "password": "sanjay",
+      "userRole": "1"
+    }
+  ],
+  "account": [
+    {
+      "id": "jay",
+      "accountNumber": 100000001
+    },
+    {
+      "id": "vijay",
+      "accountNumber": 100000002
+    },
+    {
+      "id": "sanjay",
+      "accountNumber": 100000003
+    }
+  ],
+  "policy": [
+    {
+      "policyNumber": "40000001",
+      "policyPremium": 15212,
+      "accountNumber": 100000001,
+      "createdbBy": "admin",
+      "id": "jay"
+    },
+    {
+      "policyNumber": "40000002",
+      "policyPremium": 12045,
+      "accountNumber": 100000002,
+      "id": "vijay",
+      "createdBy": "admin"
+    },
+    {
+      "policyNumber": "40000003",
+      "policyPremium": 12045,
+      "accountNumber": 100000003,
+      "id": "sanjay",
+      "createdBy": "admin"
+    }
+  ],
+  "policydetails": [
+    {
+      "id": 40000002,
+      "question1": "what is the vehicle type",
+      "question2": "what is the age of the vehicle",
+      "question3": "what is the vehicle color",
+      "answer1": "1",
+      "answer2": "2",
+      "answer3": "1"
+    }
+  ],
+  "claim": [
+    {
+      "claimReason": "Accident",
+      "claimTypeId": "1",
+      "accLocStreet": "1105, F-4, Harihar Sankul, Timber Area, College Corner, Sangli.",
+      "accCity": "Sangli",
+      "accState": "Maharashtra",
+      "accZip": "416416",
+      "claimNumber": "10002",
+      "claimAmount": "",
+      "id": "40000002"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "Are you claiming on behalf of a insured?"
+    },
+    {
+      "id": 2,
+      "question": "Was the policy created before 18 months?"
+    },
+    {
+      "id": 3,
+      "question": "Was there any human loss involved?"
+    }
+  ],
+  "claimtypes": [
+    {
+      "id": 1,
+      "claimName": "Road Accident"
+    },
+    {
+      "id": 2,
+      "claimName": "Property Damage"
+    },
+    {
+      "id": 3,
+      "claimName": "Fire"
+    }
+  ]
+}
